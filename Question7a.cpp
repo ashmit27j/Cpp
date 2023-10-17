@@ -6,7 +6,7 @@ class Shape
     double a, b;
 
     public:
-    void get_data();
+    void get_data();  //hhh
     //parameterized, so that we can check if its a triangle or rectangle
     //if 1 then triangle, if 2 then rectangle
     void display_area(int);
