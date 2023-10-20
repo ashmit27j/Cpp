@@ -3,29 +3,35 @@
 using namespace std;
 int main()
 {
-    string str1 = "India Indoi Indae";
-    string word = "In";
+    string sentence = "India Indoi Indae";
+    string word = "Indoi";
     string newstr = "";
     int k = 0, flag = 0;
-    for (int i = 0; i < str1.length(); i++)
+    for (int i = 0; i < sentence.length(); i++)
     {
         k = 0, flag = 0;
-        for (int j = i; j < word.length() + i; j++)
+        for (int j = i; j < i + word.length(); j++)
         {
-            if (str1[j] == word[k])
+            if (sentence[j] == word[k])
             {
                 flag = 1;
+                k++;
                 continue;
             }
             else
             {
+                flag = 0;
                 break;
             }
-            k++;
         }
         if (flag == 1)
         {
             i += word.length() - 1;
         }
+        else
+        {
+            newstr += sentence[i];
+        }
+        cout << newstr;
     }
 } // namespace name
