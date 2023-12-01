@@ -3,20 +3,18 @@
 using namespace std;
 int main()
 {
-    int len;
+    int len, sum = 0;
     string str1, str2;
     cin.ignore();
     getline(cin, str1);
     getline(cin, str2);
-    //also check for same length
+    //also check for same length before this
     for (int i = 0; str1[i]!='\0' || str2[i]!='\0'; i++)
     {
-        if (str1[i] != str2[i])
-        {
-            cout << "Strings not equal!";
-            return 0;
-        }
+        sum += (str1[i] - str2[i]);
     }
-    cout << "strings equal!";
-    return 1;
+    if ( sum == 0 )
+        cout << "strings equal!";
+    else
+        cout << "strings unequal!";
 }
